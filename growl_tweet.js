@@ -2,7 +2,7 @@ var sys= require('sys'),
     http = require('http'),
     growl = require('./lib/node-growl/lib/growl'),
     child_process = require('child_process');
-var query = "jsconf OR jsconfeu OR jsconflive OR promotejs OR aminutewithbrendan OR nodeconf OR jsbootcamp OR minutewith OR beerjs";
+var query = "beer OR jsconf";
 var last_tweet_id = 0;
 var connection = http.createClient(80, "search.twitter.com");
 function notifyTweet(result) {
