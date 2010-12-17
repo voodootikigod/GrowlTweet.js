@@ -1,5 +1,4 @@
-var sys= require('sys'), 
-    http = require('http'),
+var http = require('http'),
     growl = require('./lib/node-growl/lib/growl'),
     child_process = require('child_process');
 var query = "beer OR jsconf";
@@ -26,8 +25,8 @@ function getTweets() {
             for (var i = (length-1); i >= 0; i--) {
                 if (results[i].id > last_tweet_id) {
                   last_tweet_id = results[i].id;
+                  notifyTweet(results[i]);
                 }
-                notifyTweet(results[i]);
             }
         });
     });
@@ -36,4 +35,4 @@ function getTweets() {
 // prime the search
 getTweets();
 // repeat forever...
-setInterval(getTweets, 10000);
+setInterval(getTweets, 50000);
